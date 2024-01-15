@@ -1,0 +1,14 @@
+Feature: Copilot
+
+Scenario: Detecting and responding in another language
+Given I have opened Copilot
+And I have entered text in other language
+When I press Enter
+Then the answer is appearing in the other language
+
+Scenario Outline: Starts new topic
+Given I have opened Copilot
+And I have entered any text
+And I have pressed "Enter"
+When I press "New topic"
+Then new topic is started

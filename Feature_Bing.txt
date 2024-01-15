@@ -1,0 +1,25 @@
+Feature: Bing
+
+Scenario: Enter a search term into the search box and check that the correct results are returned.
+Given I have opened "https://www.bing.com/" on my browser.
+And I have entered "Prowly Media Monitoring" into the searchbox.
+When I press search icon
+Then the result should be shown.
+
+Scenario: Filtering search results by images
+Given I have opened "https://www.bing.com/" on my browser.
+And I have entered "Prowly Media Monitoring" into the searchbox.
+And I have pressed search icon.
+And I have waited for the search results to appear
+When I press "IMAGES"
+Then the result should be filtered
+
+Scenario: Return to all results after filtering search results by images
+Given I have opened "https://www.bing.com/" on my browser.
+And I have entered "Prowly Media Monitoring" into the searchbox.
+And I have pressed search icon.
+And I have waited for the search results to appear
+And I have pressed "IMAGES"
+And I have waited for the search results to appear
+When I press "SEARCH"
+Then the result should be unfiltered
